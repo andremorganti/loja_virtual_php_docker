@@ -1,5 +1,5 @@
 <?php
-  require_once("config/connection_db.php");
+  require("config/connection_db.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -17,14 +17,28 @@
 
   <?php require_once("views/shared/header.php"); ?>
 
-  <div class="container-md d-flex justify-content-center align-self-center">
-    <div class="col-4 login p-4">
-      <form method="post" actions="create.php">
-        <label for="">Login:</label> <input type="text" name="login" id="login" class="form-control"><br>
-        <label for="">Senha:</label><input type="password" name="senha" id="senha" class="form-control"><br>
-        <input type="submit" name="cadastrar" value="Cadastrar" id="cadastrar" class="btn btn-success">
-      </form>
-    </div>
+  <div class="container">
+    <?php
+      switch(@$_REQUEST['page']) {
+        case 'login':
+          include("views/users/login.php");
+        break;
+        case 'listar_todos':
+          include("views/todos/listar_todos.php");
+        break;
+        case 'novo_todo':
+          include("views/todos/novo_todo.php");
+        break;
+        case 'editar_todo':
+          include("views/todos/editar_todo.php");
+        break;
+        case 'remover_todo':
+          include("views/todos/remover_todo.php");
+        break;
+        default:
+          print "<h1>Seja bem vindo!</h1>";
+      }
+    ?>
   </div>
 
   <?php require_once('views/shared/footer.php'); ?>
