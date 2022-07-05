@@ -1,3 +1,3 @@
 <?php
-    $conn = new mysqli('mysql_db', 'root', 'root', 'mysql');
+    $conn = new mysqli('mysql_db', 'root', 'root', 'todos');
 ?>
