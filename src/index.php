@@ -1,5 +1,5 @@
 <?php
-  require("config/connection_db.php");
+  //require("config/connection_db.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">

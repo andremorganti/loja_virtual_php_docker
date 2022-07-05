@@ -1,14 +1,8 @@
 <?php
     echo "<h1>Listar Todos</h1>";
-    //require 'config/mysqliection_db.php';
+    require('utils/connection_db.php');
 
-    $mysqli = new mysqli('mysql_db', 'root', 'root', 'todos');
-
-    if ($mysqli->connect_errno) {
-        echo "Failed to connect to MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
-    }
-
-    $result = $mysqli->query("SELECT * FROM todos");
+    $result = $conn->query("SELECT * FROM todos");
 
     echo "<table class='table'>";
     echo "<thead>";
